@@ -1,0 +1,22 @@
+﻿# Function to simulate the chatbot's response
+def chatbot_response(stock_price):
+    if stock_price > 100:
+        return "The stock price is high. It's a good time to sell."
+    elif stock_price < 80:
+        return "The stock price is low. It's a good time to buy."
+    else:
+        return "The stock price is stable. Hold onto your position."
+
+# Main program
+while True:
+    user_input = input("Enter the current stock price (q to quit): ")
+    
+    if user_input == "q":
+        break
+
+    try:
+        stock_price = float(user_input)
+        response = chatbot_response(stock_price)
+        print(response)
+    except ValueError:
+        print("Invalid input. Please enter a valid stock price or 'q' to quit.")
